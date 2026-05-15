@@ -1,0 +1,10 @@
+ftp://user:pass@ftp.example.com:21/dir/file?type=A
+file:///etc/hosts
+ldap://ldap.example.com:389/dc=example,dc=com?cn?sub?(objectClass=*)
+http://host%3A8080/?a=b%26c=d
+http://%5B::1%5D:80/
+mailto:user@example.com?subject=Hi
+urn:isbn:0451450523
+ws://example.com:8080/socket
+wss://[2001:db8::1]:443/
+//relative-scheme.example/path

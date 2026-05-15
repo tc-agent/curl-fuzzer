@@ -1,0 +1,4 @@
+example.com "20370101 00:00:00"
+.subdomain.example.org "20300615 12:30:00"
+single.host.net
+malformed-line-no-quotes 20350101

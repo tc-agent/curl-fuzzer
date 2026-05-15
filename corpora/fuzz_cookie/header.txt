@@ -1,0 +1,5 @@
+Set-Cookie: session=abc123; Domain=example.com; Path=/; Secure; HttpOnly; SameSite=Strict
+Set-Cookie: prefs=light; Max-Age=86400
+Set-Cookie: lang=en-US; Expires=Wed, 21 Oct 2099 07:28:00 GMT
+Set-Cookie: __Host-id=abcdef; Secure; Path=/; HttpOnly
+Set-Cookie: __Secure-foo=bar; Secure; Domain=example.com

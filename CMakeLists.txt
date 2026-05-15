@@ -461,6 +461,28 @@ target_link_libraries(curl_fuzzer_fnmatch PRIVATE ${COMMON_LINK_LIBS})
 target_link_options(curl_fuzzer_fnmatch PRIVATE ${COMMON_LINK_OPTIONS})
 add_dependencies(curl_fuzzer_fnmatch ${FUZZ_DEPS})
 
+# Parser-targeted fuzzers. Each one drives a libcurl public API (cookies,
+# mime, HSTS, alt-svc, netrc, setopt, parsedate, escape, URL API) directly
+# from LLVMFuzzerTestOneInput - no TLV scenario, no mock server.
+macro(curl_add_parser_fuzzer _name)
+    add_executable(${_name} ${_name}.cc)
+    target_compile_options(${_name} PRIVATE ${COMMON_FLAGS})
+    target_include_directories(${_name} PRIVATE ${CURL_INCLUDE_DIRS})
+    target_link_libraries(${_name} PRIVATE ${COMMON_LINK_LIBS})
+    target_link_options(${_name} PRIVATE ${COMMON_LINK_OPTIONS})
+    add_dependencies(${_name} ${FUZZ_DEPS})
+endmacro()
+
+curl_add_parser_fuzzer(fuzz_altsvc)
+curl_add_parser_fuzzer(fuzz_cookie)
+curl_add_parser_fuzzer(fuzz_escape)
+curl_add_parser_fuzzer(fuzz_hsts)
+curl_add_parser_fuzzer(fuzz_mime)
+curl_add_parser_fuzzer(fuzz_netrc)
+curl_add_parser_fuzzer(fuzz_parsedate)
+curl_add_parser_fuzzer(fuzz_setopt)
+curl_add_parser_fuzzer(fuzz_url_extended)
+
 # Create a custom target for all fuzzers
 add_custom_target(fuzz
     DEPENDS
@@ -484,6 +506,15 @@ add_custom_target(fuzz
         fuzz_url
         fuzz_doh
         curl_fuzzer_fnmatch
+        fuzz_altsvc
+        fuzz_cookie
+        fuzz_escape
+        fuzz_hsts
+        fuzz_mime
+        fuzz_netrc
+        fuzz_parsedate
+        fuzz_setopt
+        fuzz_url_extended
 )
 
 # -----------------------------------------------------------------------------

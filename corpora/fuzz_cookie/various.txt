@@ -1,0 +1,10 @@
+Set-Cookie: a=b
+Set-Cookie: q="quoted value with; semi"
+Set-Cookie: empty=
+Set-Cookie: weird=val; Domain=.example..com; Path=/x/y; Expires=Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: name=v; Max-Age=-1
+Set-Cookie: name=v; Max-Age=99999999999
+Set-Cookie: bad; Domain=example.com
+Set-Cookie: =onlyvalue; Path=/
+Set-Cookie: a=b; Domain=.co.uk
+Set-Cookie: prefix=val; SameSite=None; Secure; Partitioned

@@ -1,0 +1,1 @@
+https://alice:secret@www.example.com:8443/path/to/file.html?query=string&q2=value#fragment
