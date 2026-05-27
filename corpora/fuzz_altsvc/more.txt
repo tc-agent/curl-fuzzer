@@ -1,0 +1,6 @@
+h1 ex.test 80 h2 ex.test 443 "20990101 00:00:00" 0 0
+h2 site.com 443 h3 site.com 443 "20300101 00:00:00" 1 1
+h3 [2001:db8::1] 443 h3 [2001:db8::2] 443 "20990101 00:00:00" 0 0
+malformed line
+h2  doublespace 443  h3  doublespace  443  "20300101 00:00:00"  0  0
+h99 unknown.proto 443 h99 unknown.proto 443 "20300101 00:00:00" 0 0

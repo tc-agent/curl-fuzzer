@@ -1,0 +1,8 @@
+machine example.com login alice password secret123
+machine ftp.example.org login user@host password "pw with spaces" account billing
+default login anonymous password guest@
+macdef init
+binary
+cd /pub
+
+machine ipv6.test login foo password bar
